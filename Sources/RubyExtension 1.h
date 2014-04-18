@@ -8,3 +8,5 @@
 
 //Définition de la fonction d'initialisation de l'Extension 1
 void Init_RubyExtension1();
+VALUE Extension1_test(int argc,VALUE* argv,VALUE self);
+VALUE Extension1_initialize(VALUE self);

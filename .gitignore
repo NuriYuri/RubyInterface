@@ -19,3 +19,6 @@
 *.exe
 *.out
 *.app
+
+# Archives
+*.7z
