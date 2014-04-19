@@ -3,6 +3,7 @@
 //Header de définition des fonctions ou constantes à importer
 //---
 //Ecrit par Nuri Yuri (18/04/2014)
+//Ajouts de méthodes par Nuri Yuri (19/04/2014)
 //===
 
 //---
@@ -95,6 +96,19 @@ typedef VALUE (*p_rb_throw)(const char* tag, VALUE data);
 typedef VALUE (*p_rb_data_object_alloc)(VALUE object, void* data, void* dmark, void(*dfree)(...));
 typedef void (*p_ruby_init_stack)(VALUE* stack);
 typedef void (*p_ruby_sysinit)(int* argc, char ***argv);
+typedef void* (*p_ruby_options)(int argc, char** argv);
+typedef int (*p_ruby_run_node)(void* node);
+typedef VALUE (*p_rb_class_boot)(VALUE superclass);
+typedef VALUE (*p_rb_marshal_dump)(VALUE object, VALUE file);
+typedef VALUE (*p_rb_marshal_load)(VALUE object_file);
+typedef void (*p_rb_marshal_define_compat)(VALUE new_class, VALUE old_class, VALUE(*dumper)(VALUE), VALUE(*loader)(VALUE,VALUE));
+typedef VALUE (*p_rb_class_new_instance)(int argc, VALUE* argv, VALUE of_class);
+typedef void (*p_rb_define_alloc_func)(VALUE of_class, VALUE(*alloc_func)(VALUE));
+typedef void (*p_rb_undef_alloc_func)(VALUE of_class);
+typedef FARPROC (*p_rb_get_alloc_func)(VALUE of_class);
+typedef VALUE (*p_rb_f_require)(VALUE nil, VALUE fname);
+typedef VALUE (*p_rb_class_get_superclass)(VALUE of_class);
+typedef VALUE (*p_rb_float_new_in_heap)(double flotant);
 
 //---
 //Conteneur à Globale, c'est un petit trick nécessaire au fonctionnement de l'interface
@@ -163,8 +177,27 @@ public:
 	ri_rbf(ruby_run);
 	ri_rbf(ruby_init_stack);
 	ri_rbf(ruby_sysinit);
+	ri_rbf(ruby_options);
+	ri_rbf(ruby_run_node);
+	ri_rbf(rb_class_boot);
+	ri_rbf(rb_marshal_dump);
+	ri_rbf(rb_marshal_load);
+	ri_rbf(rb_marshal_define_compat);
+	ri_rbf(rb_class_new_instance);
+	ri_rbf(rb_define_alloc_func);
+	ri_rbf(rb_undef_alloc_func);
+	ri_rbf(rb_get_alloc_func);
+	ri_rbf(rb_f_require);
+	ri_rbf(rb_class_get_superclass);
+	ri_rbf(rb_float_new_in_heap);
 
 	ri_rbc(rb_cObject);
 	ri_rbc(rb_mKernel);
+	ri_rbc(rb_cFixnum);
+	ri_rbc(rb_cFloat);
+	ri_rbc(rb_cTrueClass);
+	ri_rbc(rb_cSymbol);
+	ri_rbc(rb_cNilClass);
+	ri_rbc(rb_cFalseClass);
 
 };

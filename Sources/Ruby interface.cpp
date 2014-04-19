@@ -24,7 +24,7 @@ int _tmain(int argc, _TCHAR* argv[])
 	//On charge notre petite extension
 	Init_RubyExtension1();
 	//On execute un script défini dans la mémoire programme
-	RI::rb_eval_string("p Extension1.new,Extension1.test;system(\"pause\");");
+	RI::rb_eval_string("p Extension1.new,Extension1.test(0);system(\"pause\");");
 	//On termine le fonctionnement du ruby
 	RI::ruby_finalize();
 	return 0;

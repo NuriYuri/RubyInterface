@@ -5,9 +5,11 @@
 //Il est interdit de l'inclure dans stdafx.h : Cela pourrait causer des paradoxes que le compilateur aurait du mal à traiter
 //---
 //Ecrit par Nuri Yuri (18/04/2014)
+//Ajouts de méthodes par Nuri Yuri (19/04/2014)
 //===
 #include "RubyDef.h"
 #define cast_m VALUE(*)( ...)
+#define mcast (VALUE(*)( ...))
 
 #define ruby_init RI::ruby_init
 #define ruby_script RI::ruby_script
@@ -68,6 +70,25 @@
 #define ruby_run RI::ruby_run
 #define ruby_init_stack RI::ruby_init_stack
 #define ruby_sysinit RI::ruby_sysinit
+#define ruby_options RI::ruby_options
+#define ruby_run_node RI::ruby_run_node
+#define rb_class_boot RI::rb_class_boot
+#define rb_marshal_dump RI::rb_marshal_dump
+#define rb_marshal_load RI::rb_marshal_load
+#define rb_marshal_define_compat RI::rb_marshal_define_compat
+#define rb_class_new_instance RI::rb_class_new_instance
+#define rb_define_alloc_func RI::rb_define_alloc_func
+#define rb_undef_alloc_func RI::rb_undef_alloc_func
+#define rb_get_alloc_func RI::rb_get_alloc_func
+#define rb_f_require RI::rb_f_require
+#define rb_class_get_superclass RI::rb_class_get_superclass
+#define rb_float_new_in_heap RI::rb_float_new_in_heap
 #define rb_cObject *RI::rb_cObject
 #define rb_mKernel *RI::rb_mKernel
+#define rb_cFixnum *RI::rb_cFixnum
+#define rb_cFloat *RI::rb_cFloat
+#define rb_cTrueClass *RI::rb_cTrueClass
+#define rb_cSymbol *RI::rb_cSymbol
+#define rb_cNilClass *RI::rb_cNilClass
+#define rb_cFalseClass *RI::rb_cFalseClass
 

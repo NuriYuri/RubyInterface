@@ -2,6 +2,7 @@
 //Code de chargement des fonctions et constantes depuis msvcrt-ruby
 //---
 //Ecrit par Nuri Yuri (18/04/2014)
+//Ajouts de méthodes par Nuri Yuri (19/04/2014)
 //===
 #include "stdafx.h"
 
@@ -68,9 +69,28 @@ ri_rbi(rb_data_object_alloc);
 ri_rbi(ruby_run);
 ri_rbi(ruby_init_stack);
 ri_rbi(ruby_sysinit);
+ri_rbi(ruby_options);
+ri_rbi(ruby_run_node);
+ri_rbi(rb_class_boot);
+ri_rbi(rb_marshal_dump);
+ri_rbi(rb_marshal_load);
+ri_rbi(rb_marshal_define_compat);
+ri_rbi(rb_class_new_instance);
+ri_rbi(rb_define_alloc_func);
+ri_rbi(rb_undef_alloc_func);
+ri_rbi(rb_get_alloc_func);
+ri_rbi(rb_f_require);
+ri_rbi(rb_class_get_superclass);
+ri_rbi(rb_float_new_in_heap);
 
 ri_rbci(rb_cObject);
 ri_rbci(rb_mKernel);
+ri_rbci(rb_cFixnum);
+ri_rbci(rb_cFloat);
+ri_rbci(rb_cTrueClass);
+ri_rbci(rb_cSymbol);
+ri_rbci(rb_cNilClass);
+ri_rbci(rb_cFalseClass);
 
 //Initialisation des pointeurs de fonction et constante.
 void initialize_all_functions()
@@ -140,7 +160,26 @@ void initialize_all_functions()
 	load_rbf(ruby_run);
 	load_rbf(ruby_init_stack);
 	load_rbf(ruby_sysinit);
+	load_rbf(ruby_options);
+	load_rbf(ruby_run_node);
+	load_rbf(rb_class_boot);
+	load_rbf(rb_marshal_dump);
+	load_rbf(rb_marshal_load);
+	load_rbf(rb_marshal_define_compat);
+	load_rbf(rb_class_new_instance);
+	load_rbf(rb_define_alloc_func);
+	load_rbf(rb_undef_alloc_func);
+	load_rbf(rb_get_alloc_func);
+	load_rbf(rb_f_require);
+	load_rbf(rb_class_get_superclass);
+	load_rbf(rb_float_new_in_heap);
 
 	load_rbc(rb_cObject);
 	load_rbc(rb_mKernel);
+	load_rbc(rb_cFixnum);
+	load_rbc(rb_cFloat);
+	load_rbc(rb_cTrueClass);
+	load_rbc(rb_cSymbol);
+	load_rbc(rb_cNilClass);
+	load_rbc(rb_cFalseClass);
 }
